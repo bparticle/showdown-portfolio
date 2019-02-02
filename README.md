@@ -1,29 +1,12 @@
 # showdown-portfolio-vue
 
-## Project setup
-```
-npm install
-```
+A very basic and almost totally free portfolio for visual artists.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features
+* Store images on Cloudinary (http://cloudinary.com)
+* Edit content, title and reference images from one json file
+* Deploy for free on Github pages or Netlify
+* Add a custom domain name
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Installation and setup
+[To Do]
