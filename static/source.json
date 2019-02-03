@@ -1,29 +1,35 @@
-[
-  {
-    "id": "P001",
-    "title": "Image 1",
-    "img": "sample-image_01",
-    "images": {},
-    "date": "",
-    "size": "",
-    "description": "This is a brilliant example of my wonderful work as a visual artist."
+[{
+  "base": {
+    "title": "John Doe",
+    "cloudinary": "brunopatyn"
   },
-  {
-    "id": "P002",
-    "title": "Image 2",
-    "img": "sample-image_02",
-    "images": {},
-    "date": "2014",
-    "size": "102 x 53 cm",
-    "description": "Yet another stunning example of my wonderful work as a visual artist."
-  },
-  {
-    "id": "P003",
-    "title": "Image 3",
-    "img": "sample-image_03",
-    "images": {},
-    "date": "2014",
-    "size": "102 x 53 cm",
-    "description": "Yet another stunning example of my wonderful work as a visual artist."
-  }
-]
+  "work": [
+    {
+      "id": "P001",
+      "title": "Image 1",
+      "img": "sample-image_01",
+      "images": {},
+      "date": "",
+      "size": "",
+      "description": "This is a brilliant example of my wonderful work as a visual artist."
+    },
+    {
+      "id": "P002",
+      "title": "Image 2",
+      "img": "sample-image_02",
+      "images": {},
+      "date": "2014",
+      "size": "102 x 53 cm",
+      "description": "Yet another stunning example of my wonderful work as a visual artist."
+    },
+    {
+      "id": "P003",
+      "title": "Image 3",
+      "img": "sample-image_03",
+      "images": {},
+      "date": "2014",
+      "size": "102 x 53 cm",
+      "description": "Yet another stunning example of my wonderful work as a visual artist."
+    }
+  ]
+}]

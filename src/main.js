@@ -6,6 +6,8 @@ import Fullpage from 'fullpage.js'
 import "fullpage.js/dist/fullpage.min.css";
 import VueFullPage from 'vue-fullpage.js'
 import VueLazyload from 'vue-lazyload'
+import dataSrc from '@/../static/source.json'
+import axios from 'axios'
 import router from './router'
 
 // import custom components

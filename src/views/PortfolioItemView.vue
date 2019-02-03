@@ -5,7 +5,7 @@
     <div class="portfolio-item-view__content">
       <p>{{ work.description }} <span v-if="work.size">(size: {{ work.size }})</span></p>
     </div>
-    <img class="portfolio-item-view__image" :src="`https://res.cloudinary.com/bparticle/image/upload/w_${imgW}/v1549027560/samples/${work.img}.jpg`" alt="">
+    <img class="portfolio-item-view__image" :src="`https://res.cloudinary.com/bparticle/image/upload/w_${imgW}/v1549027560/${work.img}.jpg`" alt="">
   </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
     }
   },
   created() {
-    this.work = dataSrc.find(item => item.id === this.$route.params.id)
+    this.work = dataSrc[0].work.find(item => item.id === this.$route.params.id)
   },
   mounted() {
     this.$refs.itemWrapper.focus()

@@ -1,16 +1,16 @@
 <template>
-<div id="portfolio" class="portfolio page">
-  <full-page ref="fullpage" :options="fpOptions">
-    <div class="section" v-for="painting in paintings" :class="{ visible: isVisible }">
-      <portfolio-item :id="painting.id" v-bind:key="painting.id" :work="painting" v-on:follow-item="followItem" @goto-next="gotoNext" @goto-prev="gotoPrev"></portfolio-item>
-    </div>
-  </full-page>
-</div>
+  <div id="portfolio" class="portfolio page">
+    <full-page ref="fullpage" :options="fpOptions">
+      <div class="section" v-bind:key v-for="painting in paintings" :class="{ visible: isVisible }">
+        <portfolio-item :id="painting.id" v-bind:key="painting.id" :work="painting" v-on:follow-item="followItem" @goto-next="gotoNext" @goto-prev="gotoPrev"></portfolio-item>
+      </div>
+    </full-page>
+  </div>
 </template>
 
 <script>
-import dataSrc from '@/../static/source.json'
 import router from "../router"
+import dataSrc from '@/../static/source.json' 
 
 export default {
   name: 'PortfolioView',
@@ -29,7 +29,7 @@ export default {
     }
   },
   methods: {
-    afterLoad(origin, destination, direction) {
+    afterLoad(origin, destination) {
       destination.item.style.opacity = 1;
     },
     followItem(id) {
@@ -43,12 +43,7 @@ export default {
     }
   },
   created() {
-    for (var i in dataSrc) {
-      if (dataSrc.hasOwnProperty(i)) {
-        dataSrc[i].ratio = parseFloat(dataSrc[i].ratio)
-      }
-    }
-    this.paintings = dataSrc
+    this.paintings = dataSrc[0].work
   },
   beforeRouteLeave (to, from, next) {
     document.getElementById('html').classList.add("allow-scroll")

@@ -1,21 +1,33 @@
 <template>
-<div id="app">
-  <header class="header"><h1 class="header__title"><router-link to="/">JOHN DOE</router-link></h1></header>
-  <aside class="aside"><h1 class="aside__title"><router-link to="/about">ABOUT</router-link></h1></aside>
-  <transition name="router-anim">
-    <keep-alive exclude="PortfolioItem">
-      <router-view></router-view>
-    </keep-alive>
-  </transition>
-  <footer>
-
-  </footer>
-</div>
+  <div id="app">
+    <header class="header">
+      <h1 class="header__title">
+        <router-link to="/">{{ baseData.title }}</router-link>
+      </h1>
+    </header>
+    <aside class="aside"><h1 class="aside__title"><router-link to="/about">ABOUT</router-link></h1></aside>
+    <transition name="router-anim">
+      <keep-alive exclude="PortfolioItem">
+        <router-view />
+      </keep-alive>
+    </transition>
+  </div>
 </template>
 
 <script>
+import dataSrc from '@/../static/source.json'
+
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      baseData: {}
+    }
+  },
+  created() {
+    this.baseData = dataSrc[0].base
+    console.log(this.baseData);
+  }
 }
 </script>
 
