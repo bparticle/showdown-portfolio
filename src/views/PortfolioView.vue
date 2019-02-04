@@ -1,8 +1,18 @@
 <template>
   <div id="portfolio" class="portfolio page">
     <full-page ref="fullpage" :options="fpOptions">
-      <div class="section" v-bind:key v-for="painting in paintings" :class="{ visible: isVisible }">
-        <portfolio-item :id="painting.id" v-bind:key="painting.id" :work="painting" v-on:follow-item="followItem" @goto-next="gotoNext" @goto-prev="gotoPrev"></portfolio-item>
+      <div class="section"
+        v-for="painting in paintings"
+        :class="{ visible: isVisible }"
+      >
+        <portfolio-item
+          :id="painting.id"
+          v-bind:key="painting.id"
+          :work="painting"
+          @follow-item="followItem"
+          @goto-next="gotoNext"
+          @goto-prev="gotoPrev">
+        </portfolio-item>
       </div>
     </full-page>
   </div>
@@ -10,7 +20,7 @@
 
 <script>
 import router from "../router"
-import dataSrc from '@/../static/source.json' 
+import dataSrc from '@/../static/source.json'
 
 export default {
   name: 'PortfolioView',
@@ -28,6 +38,9 @@ export default {
       },
     }
   },
+  created() {
+    this.paintings = dataSrc[0].work
+  },
   methods: {
     afterLoad(origin, destination) {
       destination.item.style.opacity = 1;
@@ -41,9 +54,6 @@ export default {
     gotoPrev() {
       this.$refs.fullpage.api.moveSectionUp()
     }
-  },
-  created() {
-    this.paintings = dataSrc[0].work
   },
   beforeRouteLeave (to, from, next) {
     document.getElementById('html').classList.add("allow-scroll")
