@@ -26,7 +26,6 @@ export default {
   },
   created() {
     this.baseData = dataSrc[0].base
-    console.log(this.baseData);
   }
 }
 </script>

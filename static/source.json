@@ -1,7 +1,7 @@
 [{
   "base": {
     "title": "John Doe",
-    "cloudinary": "brunopatyn"
+    "cloudinary": "bparticle"
   },
   "work": [
     {
@@ -20,7 +20,7 @@
       "images": {},
       "date": "2014",
       "size": "102 x 53 cm",
-      "description": "Yet another stunning example of my wonderful work as a visual artist."
+      "description": "Yet another stunning example of my awe inspiring work as a visual artist."
     },
     {
       "id": "P003",
@@ -29,7 +29,7 @@
       "images": {},
       "date": "2014",
       "size": "102 x 53 cm",
-      "description": "Yet another stunning example of my wonderful work as a visual artist."
+      "description": "And yet another amazing sample of my breathtaking work as a visual artist."
     }
   ]
 }]

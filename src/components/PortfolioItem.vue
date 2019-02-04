@@ -1,18 +1,33 @@
 <template>
   <div class="portfolio-item">
-    <img class="portfolio-item__img" @click="$emit('follow-item', work.id)" :src="`https://res.cloudinary.com/bparticle/image/upload/w_1100/v1549027560/${work.img}.jpg`" alt="">
+    <img
+      class="portfolio-item__img"
+      alt=""
+      :src="`https://res.cloudinary.com/${ baseData.cloudinary }/image/upload/w_1100/v1549027560/${work.img}.jpg`"
+      @click="$emit('follow-item', work.id)"
+    >
   </div>
 </template>
 
 <script>
+import dataSrc from '@/../static/source.json'
+
 export default {
   name: 'PortfolioItem',
-  data () {
-    return {
+  props: {
+    work: {
+      type: Array,
+      required: true,
+      default: () => []
     }
   },
-  props: {
-    work: {}
+  data () {
+    return {
+      baseData: {}
+    }
+  },
+  created() {
+    this.baseData = dataSrc[0].base
   }
 }
 </script>
