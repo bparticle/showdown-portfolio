@@ -4,6 +4,12 @@
     "cloudinary": {
       "accountName": "bparticle",
       "imgFolder": "samples"
+    },
+    "imageSizes": {
+      "small": "450",
+      "medium": "800",
+      "large": "1600",
+      "xlarge": "1800"
     }
   },
   "work": [
@@ -11,7 +17,7 @@
       "id": "P001",
       "title": "Image 1",
       "img": "sample-image_01",
-      "images": {},
+      "images": ["sample-image_01_000", "sample-image_01_001", "sample-image_01_002"],
       "date": "",
       "size": "",
       "description": "This is a brilliant example of my wonderful work as a visual artist."

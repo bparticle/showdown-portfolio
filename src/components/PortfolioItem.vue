@@ -16,7 +16,7 @@ export default {
   name: 'PortfolioItem',
   props: {
     work: {
-      type: Array,
+      type: Object,
       required: true,
       default: () => []
     }

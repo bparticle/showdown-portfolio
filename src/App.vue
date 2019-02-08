@@ -190,7 +190,7 @@ p {
 // View Animations
 .router-anim {
   &-enter-active {
-    animation: coming .7s;
+    animation: coming .9s;
     animation-delay: .5s;
     opacity: 0;
   }

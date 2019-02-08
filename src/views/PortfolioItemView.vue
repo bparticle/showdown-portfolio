@@ -17,18 +17,20 @@
     <div class="portfolio-item-view__content">
       <p>{{ work.description }} <span v-if="work.size">(size: {{ work.size }})</span></p>
     </div>
-    <img
-      class="portfolio-item-view__image"
-      alt=""
-      sizes="100vw"
-      :src="`https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.small }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg`"
-      :srcset="`
-        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.small }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.small }w,
-        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.medium }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.medium }w,
-        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.large }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.large }w,
-        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.xlarge }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.xlarge }w
-      `"
-    >
+    <cloudinary-img
+      :sizes="imgSizes"
+      :name="work.img"
+      :hspace="100"
+    />
+    <div class="portfolio-item-view__details">
+      <cloudinary-img
+        v-for="(img, key) in images"
+        :key="key"
+        :sizes="imgSizes"
+        :name="img"
+        :hspace="50"
+      />
+    </div>
   </div>
 </template>
 
@@ -42,13 +44,9 @@ export default {
     return {
       id: this.$route.params.id,
       work: {},
+      images: {},
       baseData: {},
-      imgSizes: {
-        small: 450,
-        medium: 800,
-        large: 1600,
-        xlarge: 1800
-      }
+      imgSizes: {}
     }
   },
   mounted() {
@@ -57,6 +55,8 @@ export default {
   created() {
     this.work = dataSrc[0].work.find(item => item.id === this.$route.params.id)
     this.baseData = dataSrc[0].base
+    this.imgSizes = dataSrc[0].base.imageSizes
+    this.images = this.work.images
   },
   methods: {
     returnHome: function () {
@@ -72,11 +72,6 @@ export default {
 
   width: 100%;
   margin-bottom: 0;
-
-  &__image {
-    width: 100%;
-    vertical-align: bottom;
-  }
 
   &__title {
     margin-top: 0;
