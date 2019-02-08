@@ -3,7 +3,7 @@
     <img
       class="portfolio-item__img"
       alt=""
-      :src="`https://res.cloudinary.com/${ baseData.cloudinary }/image/upload/w_1100/v1549027560/${work.img}.jpg`"
+      :src="`https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_1100/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg`"
       @click="$emit('follow-item', work.id)"
     >
   </div>

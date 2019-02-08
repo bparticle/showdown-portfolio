@@ -1,18 +1,25 @@
 <template>
-  <div id="portfolio" class="portfolio page">
-    <full-page ref="fullpage" :options="fpOptions">
-      <div class="section"
-        v-for="painting in paintings"
+  <div
+    id="portfolio"
+    class="portfolio page"
+  >
+    <full-page
+      ref="fullpage"
+      :options="fpOptions"
+    >
+      <div
+        v-for="item in work"
+        class="section"
         :class="{ visible: isVisible }"
       >
         <portfolio-item
-          :id="painting.id"
-          v-bind:key="painting.id"
-          :work="painting"
+          :id="item.id"
+          :key="item.id"
+          :work="item"
           @follow-item="followItem"
           @goto-next="gotoNext"
-          @goto-prev="gotoPrev">
-        </portfolio-item>
+          @goto-prev="gotoPrev"
+        />
       </div>
     </full-page>
   </div>
@@ -27,7 +34,7 @@ export default {
   data() {
     return {
       isVisible: false,
-      paintings: {},
+      work: {},
       fpOptions: {
         licenseKey: '63A6F8EE-8C0447C8-B6EDE9AC-7FB304CC',
         navigation: true,
@@ -39,7 +46,7 @@ export default {
     }
   },
   created() {
-    this.paintings = dataSrc[0].work
+    this.work = dataSrc[0].work
   },
   methods: {
     afterLoad(origin, destination) {

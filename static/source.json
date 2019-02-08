@@ -1,7 +1,10 @@
 [{
   "base": {
     "title": "John Doe",
-    "cloudinary": "bparticle"
+    "cloudinary": {
+      "accountName": "bparticle",
+      "imgFolder": "samples"
+    }
   },
   "work": [
     {

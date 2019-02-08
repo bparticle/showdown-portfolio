@@ -21,12 +21,12 @@
       class="portfolio-item-view__image"
       alt=""
       sizes="100vw"
-      :src="`https://res.cloudinary.com/${ baseData.cloudinary }/image/upload/w_${ imgSizes.small }/v1549027560/${work.img}.jpg`"
+      :src="`https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.small }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg`"
       :srcset="`
-        https://res.cloudinary.com/${ baseData.cloudinary }/image/upload/w_${ imgSizes.small }/v1549027560/${work.img}.jpg ${ imgSizes.small }w,
-        https://res.cloudinary.com/${ baseData.cloudinary }/image/upload/w_${ imgSizes.medium }/v1549027560/${work.img}.jpg ${ imgSizes.medium }w,
-        https://res.cloudinary.com/${ baseData.cloudinary }/image/upload/w_${ imgSizes.large }/v1549027560/${work.img}.jpg ${ imgSizes.large }w,
-        https://res.cloudinary.com/${ baseData.cloudinary }/image/upload/w_${ imgSizes.xlarge }/v1549027560/${work.img}.jpg ${ imgSizes.xlarge }w
+        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.small }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.small }w,
+        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.medium }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.medium }w,
+        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.large }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.large }w,
+        https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ imgSizes.xlarge }/v1549027560/${ baseData.cloudinary.imgFolder }/${work.img}.jpg ${ imgSizes.xlarge }w
       `"
     >
   </div>
@@ -71,10 +71,11 @@ export default {
 .portfolio-item-view {
 
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 0;
 
   &__image {
     width: 100%;
+    vertical-align: bottom;
   }
 
   &__title {
@@ -96,6 +97,7 @@ export default {
 
   .portfolio-item-view {
     padding: 0 15px;
+    margin-bottom: 15px;
 
     &__title {
       padding-left: 0;

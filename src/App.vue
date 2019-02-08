@@ -6,11 +6,19 @@
       </h1>
     </header>
     <aside class="aside"><h1 class="aside__title"><router-link to="/about">ABOUT</router-link></h1></aside>
-    <transition name="router-anim">
-      <keep-alive exclude="PortfolioItem">
-        <router-view />
-      </keep-alive>
-    </transition>
+    <content>
+      <transition name="router-anim">
+        <keep-alive exclude="PortfolioItem">
+          <router-view />
+        </keep-alive>
+      </transition>
+    </content>
+    <router-link to="/">
+      <img
+        class="logo"
+        src="@/assets/logo.png"
+      >
+    </router-link>
   </div>
 </template>
 
@@ -41,6 +49,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  overflow-x: hidden; // hide scroll bar on transition
 }
 
 body {
@@ -107,6 +116,12 @@ p {
   top: 15px;
 }
 
+.logo {
+  position: fixed;
+  right: 27px;
+  bottom: 25px;
+}
+
 // Responsive
 
 @media all and (max-width: 800px) {}
@@ -130,28 +145,44 @@ p {
 
 @font-face {
   font-family: 'IBMPlexSans';
-  src: url('./assets/fonts/ibmplexsans/IBMPlexSans.eot?#iefix') format('embedded-opentype'),  url('./assets/fonts/ibmplexsans/IBMPlexSans.woff') format('woff'), url('./assets/fonts/ibmplexsans/IBMPlexSans-Regular.ttf')  format('truetype'), url('./assets/fonts/ibmplexsans/IBMPlexSans.svg#IBMPlexSans') format('svg');
+  src:
+    url('./assets/fonts/ibmplexsans/IBMPlexSans.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans.woff') format('woff'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Regular.ttf')  format('truetype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans.svg#IBMPlexSans') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'IBMPlexSans';
-  src: url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.eot?#iefix') format('embedded-opentype'),  url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.woff') format('woff'), url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.ttf')  format('truetype'), url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.svg#IBMPlexSans-Bold') format('svg');
+  src:
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.woff') format('woff'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.ttf')  format('truetype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Bold.svg#IBMPlexSans-Bold') format('svg');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'IBMPlexSans';
-  src: url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.eot?#iefix') format('embedded-opentype'),  url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.woff') format('woff'), url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.ttf')  format('truetype'), url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.svg#IBMPlexSans-Medium') format('svg');
+  src:
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.woff') format('woff'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.ttf')  format('truetype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-Medium.svg#IBMPlexSans-Medium') format('svg');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'IBMPlexSans';
-  src: url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.eot?#iefix') format('embedded-opentype'),  url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.woff') format('woff'), url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.ttf')  format('truetype'), url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.svg#IBMPlexSans-MediumItalic') format('svg');
+  src:
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.woff') format('woff'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.ttf')  format('truetype'),
+    url('./assets/fonts/ibmplexsans/IBMPlexSans-MediumItalic.svg#IBMPlexSans-MediumItalic') format('svg');
   font-weight: 500;
   font-style: italic;
 }
