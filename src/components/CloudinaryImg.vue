@@ -3,7 +3,7 @@
     class="cloudinary-img"
     :class="scaleClass"
     alt=""
-    :sizes="hPerc"
+    :sizes="hSpace"
     :src="`https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ sizes.small }/v1549027560/${ baseData.cloudinary.imgFolder }/${name}.jpg`"
     :srcset="`
       https://res.cloudinary.com/${ baseData.cloudinary.accountName }/image/upload/w_${ sizes.small }/v1549027560/${ baseData.cloudinary.imgFolder }/${name}.jpg ${ sizes.small }w,
@@ -29,9 +29,9 @@ export default {
       required: true,
       default: () => []
     },
-    hspace: {
+    layout: {
       type: Number,
-      default: 100
+      default: 0
     }
   },
   data () {
@@ -42,7 +42,10 @@ export default {
   },
   computed: {
     scaleClass: function () {
-      return 'cloudinary-img--' + this.hspace
+      return 'cloudinary-img--' + this.layout
+    },
+    hSpace: function () {
+      return (this.layout == 0) ? 100 : 50
     }
   },
   created() {
@@ -54,12 +57,15 @@ export default {
 <style lang="scss">
   .cloudinary-img {
       width: 100%;
-      vertical-align: bottom;
-      &--50 {
+      vertical-align: top;
+      &--0 {
+        width: 100%;
+      }
+      &--1 {
         width: 50%;
       }
-      &--33 {
-        width: 33.33%;
+      &--2 {
+        width: 33.3%;
       }
   }
 </style>

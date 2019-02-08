@@ -20,15 +20,14 @@
     <cloudinary-img
       :sizes="imgSizes"
       :name="work.img"
-      :hspace="100"
     />
     <div class="portfolio-item-view__details">
       <cloudinary-img
         v-for="(img, key) in images"
         :key="key"
         :sizes="imgSizes"
+        :layout="imgLayout"
         :name="img"
-        :hspace="50"
       />
     </div>
   </div>
@@ -44,9 +43,18 @@ export default {
     return {
       id: this.$route.params.id,
       work: {},
-      images: {},
-      baseData: {},
-      imgSizes: {}
+      baseData: {}
+    }
+  },
+  computed: {
+    images: function () {
+      return this.work.images.list
+    },
+    imgSizes: function () {
+      return dataSrc[0].base.imageSizes
+    },
+    imgLayout: function () {
+      return this.work.images.layout
     }
   },
   mounted() {
@@ -55,8 +63,6 @@ export default {
   created() {
     this.work = dataSrc[0].work.find(item => item.id === this.$route.params.id)
     this.baseData = dataSrc[0].base
-    this.imgSizes = dataSrc[0].base.imageSizes
-    this.images = this.work.images
   },
   methods: {
     returnHome: function () {

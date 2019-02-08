@@ -17,7 +17,10 @@
       "id": "P001",
       "title": "Image 1",
       "img": "sample-image_01",
-      "images": ["sample-image_01_000", "sample-image_01_001", "sample-image_01_002"],
+      "images": {
+        "list": ["sample-image_01_000", "sample-image_01_001", "sample-image_01_002"],
+        "layout": "2"
+      },
       "date": "",
       "size": "",
       "description": "This is a brilliant example of my wonderful work as a visual artist."
@@ -26,7 +29,10 @@
       "id": "P002",
       "title": "Image 2",
       "img": "sample-image_02",
-      "images": {},
+      "images": {
+        "list": ["sample-image_02_000", "sample-image_02_001", "sample-image_02_002", "sample-image_02_004"],
+        "layout": "1"
+      },
       "date": "2014",
       "size": "102 x 53 cm",
       "description": "Yet another stunning example of my awe inspiring work as a visual artist."
