@@ -1,10 +1,23 @@
 <template>
-  <div id="about" class="about page" ref="itemWrapper" v-on:keyup.esc="returnHome">
-    <router-link to="/"><img class="close-view" src="@/assets/close.svg" alt=""></router-link>
+  <div
+    id="about"
+    ref="itemWrapper"
+    class="about page"
+    @keyup.esc="returnHome"
+  >
+    <router-link to="/">
+      <img
+        class="close-view"
+        src="@/assets/close.svg"
+        alt=""
+      >
+    </router-link>
     <h1 class="about__title">About</h1>
     <div class="about__content">
-      <div>John Doe (Memphis Tennessee - USA, 1977)<br />
-        Some cool credentials</div>
+      <div>
+        John Doe (Memphis Tennessee - USA, 1977)<br />
+        Some cool credentials
+      </div>
       <div>
         <p>Artist residencies</p>
         <ul>
@@ -39,13 +52,13 @@ export default {
   data() {
     return {}
   },
+  mounted() {
+    this.$refs.itemWrapper.focus()
+  },
   methods: {
     returnHome: function () {
       router.push('/')
     }
-  },
-  mounted() {
-    this.$refs.itemWrapper.focus()
   }
 }
 </script>
