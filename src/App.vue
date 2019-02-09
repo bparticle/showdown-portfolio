@@ -16,7 +16,7 @@
     <router-link to="/">
       <img
         class="logo"
-        src="@/assets/logo.png"
+        src="@/assets/logo.svg"
       >
     </router-link>
   </div>

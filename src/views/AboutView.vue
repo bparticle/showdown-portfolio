@@ -2,6 +2,7 @@
   <div
     id="about"
     ref="itemWrapper"
+    tabindex="0"
     class="about page"
     @keyup.esc="returnHome"
   >
