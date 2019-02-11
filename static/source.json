@@ -1,50 +1,51 @@
-[{
-  "base": {
-    "title": "John Doe",
-    "cloudinary": {
-      "accountName": "bparticle",
-      "imgFolder": "samples"
-    },
-    "imageSizes": {
-      "small": "450",
-      "medium": "800",
-      "large": "1600",
-      "xlarge": "1800"
-    }
-  },
-  "work": [
-    {
-      "id": "P001",
-      "title": "Image 1",
-      "img": "sample-image_01",
-      "images": {
-        "list": ["sample-image_01_000", "sample-image_01_001", "sample-image_01_002"],
-        "layout": "2"
+{
+  "data": {
+    "base": {
+      "title": "John Doe",
+      "cloudinary": {
+        "accountName": "bparticle",
+        "imgFolder": "samples"
       },
-      "date": "",
-      "size": "",
-      "description": "This is a brilliant example of my wonderful work as a visual artist."
+      "imageSizes": {
+        "small": "450",
+        "medium": "800",
+        "large": "1600",
+        "xlarge": "1800"
+      }
     },
-    {
-      "id": "P002",
-      "title": "Image 2",
-      "img": "sample-image_02",
-      "images": {
-        "list": ["sample-image_02_000", "sample-image_02_001", "sample-image_02_002", "sample-image_02_004"],
-        "layout": "1"
+    "work": [{
+        "id": "P001",
+        "title": "Image 1",
+        "img": "sample-image_01",
+        "images": {
+          "list": ["sample-image_01_000", "sample-image_01_001", "sample-image_01_002"],
+          "layout": "2"
+        },
+        "date": "",
+        "size": "",
+        "description": "This is a brilliant example of my wonderful work as a visual artist."
       },
-      "date": "2014",
-      "size": "102 x 53 cm",
-      "description": "Yet another stunning example of my awe inspiring work as a visual artist."
-    },
-    {
-      "id": "P003",
-      "title": "Image 3",
-      "img": "sample-image_03",
-      "images": {},
-      "date": "2014",
-      "size": "102 x 53 cm",
-      "description": "And yet another amazing sample of my breathtaking work as a visual artist."
-    }
-  ]
-}]
+      {
+        "id": "P002",
+        "title": "Image 2",
+        "img": "sample-image_02",
+        "images": {
+          "list": ["sample-image_02_000", "sample-image_02_001", "sample-image_02_002", "sample-image_02_004"],
+          "layout": "1"
+        },
+        "date": "2014",
+        "size": "102 x 53 cm",
+        "description": "Yet another stunning example of my awe inspiring work as a visual artist."
+      },
+      {
+        "id": "P003",
+        "title": "Image 3",
+        "img": "sample-image_03",
+        "images": {},
+        "date": "2014",
+        "size": "102 x 53 cm",
+        "description": "And yet another amazing sample of my breathtaking work as a visual artist."
+      }
+    ]
+  }
+}

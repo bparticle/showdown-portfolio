@@ -46,7 +46,7 @@ export default {
     }
   },
   created() {
-    this.work = dataSrc[0].work
+    this.work = dataSrc.data.work
   },
   methods: {
     afterLoad(origin, destination) {

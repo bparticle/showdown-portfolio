@@ -49,7 +49,7 @@ export default {
     }
   },
   created() {
-    this.baseData = dataSrc[0].base
+    this.baseData = dataSrc.data.base
   }
 }
 </script>

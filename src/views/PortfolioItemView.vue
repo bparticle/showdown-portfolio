@@ -51,7 +51,7 @@ export default {
       return this.work.images.list
     },
     imgSizes: function () {
-      return dataSrc[0].base.imageSizes
+      return dataSrc.data.base.imageSizes
     },
     imgLayout: function () {
       return this.work.images.layout
@@ -61,8 +61,8 @@ export default {
     this.$refs.itemWrapper.focus()
   },
   created() {
-    this.work = dataSrc[0].work.find(item => item.id === this.$route.params.id)
-    this.baseData = dataSrc[0].base
+    this.work = dataSrc.data.work.find(item => item.id === this.$route.params.id)
+    this.baseData = dataSrc.data.base
   },
   methods: {
     returnHome: function () {
